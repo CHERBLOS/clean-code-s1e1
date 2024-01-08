@@ -35,13 +35,13 @@ var createNewTaskElement=function(taskString){
     label.innerText=taskString;
     label.className='task';
 
-    listItem.className="task-item"
+    listItem.className="task__item"
 
     //Each elements, needs appending
     checkBox.type="checkbox";
-    checkBox.classList="task-checkbox"
+    checkBox.classList="task__checkbox"
     editInput.type="text";
-    editInput.className="task task-input";
+    editInput.className="task task__input";
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="button edit";
@@ -124,6 +124,7 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    listItem.classList.toggle("task__completed");
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
 
