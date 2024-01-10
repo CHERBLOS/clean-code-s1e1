@@ -94,9 +94,11 @@ var editTask=function(){
 
         //switch to .edit-mode
         //label becomes the inputs value.
+        label.style.display = "block";
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
     }else{
+        label.style.display = "none";
         editInput.value=label.innerText;
         editBtn.innerText="Save";
     }
